@@ -5,10 +5,8 @@ using namespace std;
 
 int main() {
     vector<int> a;
-
-    for (int i = 0; i < 3; i++) {
-        int element;
-        cin >> element;
+    int element;
+    while (cin.peek() != '\n' && cin >> element) {
         a.push_back(element);
     }
 

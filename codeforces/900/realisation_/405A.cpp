@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-void solve() {
+int main() {
     int n;
     cin >> n;
     vector<int> a;
@@ -12,5 +13,8 @@ void solve() {
         cin >> element;
         a.push_back(element);
     }
-    // 1 2 1 2 2 1 2 1
+    sort(a.begin(), a.end());
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
 }

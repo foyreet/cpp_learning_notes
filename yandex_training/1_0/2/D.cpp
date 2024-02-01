@@ -1,15 +1,17 @@
 #include <iostream>
 #include <vector>
+
+using namespace std;
+
 int main() {
-    std::vector<int> a;
     int counter = 0;
-    for (int i = 0; i < 5; i++) {
-        int element;
-        std::cin >> element;
+    vector<int> a;
+    int element;
+    while (cin.peek() != '\n' && cin >> element) {
         a.push_back(element);
     }
 
-    for (int i = 1; i < 4; i++) {
+    for (int i = 1; i < a.size() - 1; i++) {
         if (a[i] > a[i-1] && a[i] > a[i+1]) {
             counter++;
         }
