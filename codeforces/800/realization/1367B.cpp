@@ -63,7 +63,7 @@ int main() {
 
 using namespace std;
 using ld = long double;
-using ll = long long;
+using int64_t = long long;
 
 void solve() {
     int n;
