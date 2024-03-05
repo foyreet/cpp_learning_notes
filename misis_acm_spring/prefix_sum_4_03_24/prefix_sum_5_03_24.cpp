@@ -2,8 +2,6 @@
 #include <vector>
 #include <algorithm>
 #include <unordered_set>
-using std::cin;
-using std::cout;
 // Нахождение отрезка суммы равной k
 std::ostream& operator << (std::ostream& os, const std::vector<int>& v) {
     for (const auto& x : v) {
@@ -18,6 +16,7 @@ std::istream& operator >>(std::istream& is, std::vector<int>& v) {
     }
     return is;
 }
+
 int main() {
     std::vector<int> arr(10);
     std::cin >> arr;
