@@ -130,8 +130,10 @@ void C_misis() {
     cout << max;
 }
 
+
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    C_misis();
+
+    vector<ll>
 }
