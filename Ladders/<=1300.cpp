@@ -215,19 +215,34 @@ void A_450() {
     cout << max_child_index + 1;
 }
 
-void A_165() {
+void A_139() {
     int n;
     cin >> n;
-    int x, y;
-    cin >> x >> y;
-
+    const int kolvo_days_in_a_week = 7;
+    vector<int> a(kolvo_days_in_a_week);
+    for (auto& it : a) cin >> it;
+    int sum = 0;
+    int count = 1;
+    for (int i = 0; i < a.size(); i++) {
+        sum += a[i];
+    }
+    int k;
+    k = (n + sum - 1) / sum;
+    sum = 0;
+    for (int i = 0; i < a.size() * k; i++) {
+        sum += a[i%7];
+        if (sum < n) {
+            count++;
+        }
+    }
+    if (count % 7 == 0) {
+        cout << 7;
+    } else {
+        cout << count % 7;
+    }
 }
 
 int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        A_165();
-    }
+    A_139();
 }
 
