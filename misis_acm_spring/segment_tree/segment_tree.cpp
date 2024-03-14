@@ -45,7 +45,8 @@ void build_segment_tree_min(const vector<int>& a) {
 
 // Функция изменения элемента в ДО для суммы
 void upd_sum(int i, int x) {
-    t[i += n] = x;
+    i += n;
+    t[i] = x;
     for (i /= 2; i > 0; i /= 2) { // Поднимаемся вверх к вершине
         t[i] = t[i * 2] + t[i * 2 + 1];
     }
@@ -53,13 +54,27 @@ void upd_sum(int i, int x) {
 
 // Функция изменения элемента в ДО для минимума
 void upd_min(int i, int x) {
-    t[i += n] = x;
+    i += n;
+    t[i] = x;
     for (i /= 2 ; i > 0; i /= 2) { // Поднимаемся вверх к вершине
         t[i] = min(t[i * 2], t[i * 2 + 1]);
     }
 }
-
-// Функция нахождения суммы на отрезке от l до r
+// Рекурсивная функция нахождения суммы на отрезке от l до r
+ll sum(int v, int tl, int tr, int l, int r) {
+    if (tl == l && tr == r) return t[v];
+    if (l > r) return 0;
+    int tm = (tl + tr) / 2;
+    int res = 0;
+    if (l <= tm) {
+        res += sum(2 * v, tl, tm, l, min(tm, r));
+    }
+    if (r >= tm + 1) {
+        res += sum(2 * v + 1, tm + 1, tr, max(l, tm + 1), r);
+    }
+    return res;
+}
+// Нерекурсивная функция нахождения суммы на отрезке от l до r
 ll get_sum(int l, int r) {
     ll res = 0;
     for (l += n, r += n; l <= r; l /= 2, r /= 2) {
@@ -69,7 +84,7 @@ ll get_sum(int l, int r) {
     return res;
 }
 
-// Функция нахождения минимума на отрезке от l до r
+// Нерекурсивная функция нахождения минимума на отрезке от l до r
 ll get_min(int l, int r) {
     ll res = LLONG_MAX;
     for (l += n, r += n; l <= r; l /= 2, r /=2) {
