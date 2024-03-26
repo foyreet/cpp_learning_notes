@@ -44,15 +44,14 @@ int main() {
     int m;
     cin >> n >> m;
     vector<int> a(n);
-    for (auto &it: a) cin >> it;
     build_segment_tree(a);
     while (m--) {
         int count, i, v;
         cin >> count >> i >> v;
         if (count == 1) {
-            upd(i, v);
+            cout << sum(i, v) << '\n';
         } else if (count == 2) {
-            cout << sum(i, v - 1) << '\n';
+            upd(i, v);
         }
     }
 }
