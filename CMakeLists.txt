@@ -183,3 +183,7 @@ add_executable(binsearch_problems misis_acm_spring/binsearch/binsearch_problems.
 add_executable(segment_tree_B misis_acm_spring/segment_tree/segment_tree_B.cpp)
 add_executable(segment_tree_C misis_acm_spring/segment_tree/segment_tree_C.cpp)
 add_executable(segment_tree_on_points misis_acm_spring/segment_tree/segment_tree_on_points.cpp)
+add_executable(STL misis_acm_spring/STL/STL.cpp)
+add_executable(stress_test misis_acm_spring/stress_test/stress_test.cpp)
+add_executable(root misis_acm_spring/root_decomposition/A_root.cpp)
+add_executable(ternar_search misis_acm_spring/ternar_search/ternar_search.cpp)
