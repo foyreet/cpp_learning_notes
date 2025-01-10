@@ -34,7 +34,7 @@ int main() {
 
         // пробегаемся по массиву который составляем и если там пустая клетка, то вставляем туда неиспользованное число
         for (int i = 0; i < n; i++) {
-            if (!result[i]) {
+            if (result[i] == 0) {
                 result[i] = unused_numbers.front();
                 unused_numbers.pop();
             }

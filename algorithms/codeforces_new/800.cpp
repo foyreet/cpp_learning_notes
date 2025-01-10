@@ -4,6 +4,7 @@
 #include <string>
 #include <cmath>
 #include <map>
+#include <vector>
 using namespace std;
 
 void A_1955() {
@@ -94,6 +95,38 @@ void author_solve_A_1986() {
         }
     }
 
-    int main() {
+    void A_1981() {
+        int t;
+        cin >> t;
+        while (t--) {
+            int l, r;
+            cin >> l >> r;
+            int count_bits = (int)log2(r); // степень в которую надо возвести число
+                cout << count_bits << endl;
+        }
+    }
+// Идея взять маскимумы соседних элементов и затем найти среди них min
+    void A_1979() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> a(n);
+        for (auto& it : a) cin >> it;
 
+        vector<int> maxima;
+        for (int i = 0; i < n - 1; i++) {
+            int max_value = max(a[i], a[i+1]);
+            maxima.push_back(max_value);
+        }
+        auto min_maxima = min_element(maxima.begin(), maxima.end());
+        int min_value = *min_maxima;
+        cout << min_value - 1 << endl;
+    }
+}
+
+
+    int main() {
+        A_1979();
     }
