@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 void A() {
     int t;
@@ -32,6 +33,45 @@ void B() {
     }
 }
 
+void C() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, s, m;
+        cin >> n >> s >> m;
+        int rows = n;
+        int columns = 2;
+        bool flag = false;
+        vector<vector<int>> matrix(n, vector<int>(2));
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                cin >> matrix[i][j];
+            }
+        }
+
+        for (int i = 0; i < rows - 1; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (matrix[i+1][0] - matrix[i][1] >= s) {
+                    flag = true;
+                    break;
+                }
+            }
+        }
+
+        if (matrix[0][0] >= s) {
+            flag = true;
+        }
+        if (m - matrix[rows - 1][1] >= s) {
+            flag = true;
+        }
+
+        if (flag) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
+        }
+    }
+}
 int main() {
-    B();
+    C();
 }
