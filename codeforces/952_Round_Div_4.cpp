@@ -31,7 +31,7 @@ void B() {
         }
     }
 }
-// не проходило по памяти поэтому переписал
+/// не проходило по памяти поэтому переписал
 //long long SumPrefix(const vector<int>& prefix) {
 //    long long sum = 0;
 //    for (const auto& elem : prefix) {
