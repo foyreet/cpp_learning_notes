@@ -8,24 +8,22 @@ bool isPrimeNumber (int a, int n) {
             count++;
         }
     }
-    if (count == 2) {
-        return true;
-    } else {
-        return false;
-    }
+    return count == 2;
 }
 
 int main() {
     int a, n;
     cin >> a >> n;
+
     if (a == 1) {
         cout << "not Prime number and not Complex number" << endl;
-    }
-    if (isPrimeNumber(a, n)) {
-        cout << "Prime Number" << endl;
     } else {
-        cout << "Complex number" << endl;
+        if (isPrimeNumber(a, n)) {
+            cout << "Prime Number" << endl;
+        }
+        else {
+            cout << "Complex number" << endl;
+         }
     }
-
 
 }
